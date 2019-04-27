@@ -20,7 +20,7 @@ function App() {
         <ul>
           {
             songs.map(song => (
-              <li>{song.name} - {song.artist}</li>
+              <li key={song._id}>{song.name} - {song.artist}</li>
             ))
           }
         </ul>
