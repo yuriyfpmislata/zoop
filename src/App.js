@@ -1,22 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
 
-async function getZoopAPIversion() {
-  const { version } = await fetch(`${process.env.REACT_APP_ZOOP_API_URL}`).then(res => res.json());
-  return version;
+async function getSongs() {
+  const { songs } = await fetch(`${process.env.REACT_APP_ZOOP_API_URL}/songs`).then(res => res.json());
+  return songs;
 }
 
 function App() {
 
-  const [APIversion, setAPIversion] = useState('');
+  const [songs, setSongs] = useState([]);
 
-  getZoopAPIversion()
-    .then(version => setAPIversion(version));
+  getSongs()
+    .then(setSongs);
 
   return (
     <div className="App">
       <header className="App-header">
-        zoop API version: {APIversion}
+        <h4>Songs</h4>
+        <ul>
+          {
+            songs.map(song => (
+              <li>{song.name} - {song.artist}</li>
+            ))
+          }
+        </ul>
       </header>
     </div>
   );
