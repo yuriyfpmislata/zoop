@@ -1,23 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+async function getZoopAPIversion() {
+  const { version } = await fetch(`${process.env.REACT_APP_ZOOP_API_URL}`).then(res => res.json());
+  return version;
+}
+
 function App() {
+
+  const [APIversion, setAPIversion] = useState('');
+
+  getZoopAPIversion()
+    .then(version => setAPIversion(version));
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        zoop API version: {APIversion}
       </header>
     </div>
   );
