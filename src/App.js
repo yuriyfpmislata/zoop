@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 async function getSongs() {
@@ -6,12 +6,35 @@ async function getSongs() {
   return songs;
 }
 
+
+async function getTest() {
+  return await fetch(`${process.env.REACT_APP_ZOOP_API_URL}/graphql`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      query: `
+        {
+          test
+        }
+      `
+    })
+  }).then(res => res.json());
+}
+
 function App() {
 
   const [songs, setSongs] = useState([]);
+  const [test, setTest] = useState('');
 
-  getSongs()
-    .then(setSongs);
+  useEffect(() => {
+    getSongs()
+      .then(setSongs);
+
+    getTest()
+      .then(({ data }) => setTest(data.test));
+  }, []);
 
   return (
     <div className="App">
@@ -24,6 +47,8 @@ function App() {
             ))
           }
         </ul>
+        <h4>GraphQL test</h4>
+        <p>{test}</p>
       </header>
     </div>
   );
