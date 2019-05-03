@@ -1,0 +1,17 @@
+$bg-dark: #252527;
+$bg-light: #fafafa;
+
+$accent: #0026FD;
+
+* {
+  margin: 0;
+}
+
+body {
+  background: $bg-light;
+  padding: 1rem;
+}
+
+h1 {
+  color: $accent;
+}
