@@ -3,8 +3,8 @@ import './Home.scss';
 
 function Home() {
   return (
-    <div className="Home">
-      <h2>Artists</h2>
+    <div className="Home section">
+      <h2 className="title is-4">Artists</h2>
     </div>
   );
 }
