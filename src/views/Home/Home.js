@@ -7,7 +7,7 @@ function Home() {
   const [artists, setArtists] = useState([]);
 
   async function fetchArtists() {
-    setArtists(await artistService.findAll());
+    setArtists(await artistService.findRandom(5));
   }
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <section className="Home section">
-      <h2 className="title is-4">Artists</h2>
+      <h2 className="title is-4">Featured Artists</h2>
       <Artists artists={artists} />
     </section>
   );

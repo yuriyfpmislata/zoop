@@ -18,6 +18,23 @@ async function findAll() {
   return artists;
 }
 
+async function findRandom(limit = 5) {
+  const query = `
+    {
+      artists(random: true, limit: ${ limit}) {
+        _id
+        name
+        image
+      }
+    }
+  `;
+
+  const { data: { data: { artists } } } = await axios.post(API, { query });
+
+  return artists;
+}
+
 export {
-  findAll
+  findAll,
+  findRandom
 }
