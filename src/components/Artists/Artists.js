@@ -1,6 +1,6 @@
 import React from 'react';
 import './Artists.scss';
-import Artist from './Artist/Artist';
+import ArtistCard from './ArtistCard/ArtistCard';
 
 function Artists({ artists }) {
   return (
@@ -10,7 +10,7 @@ function Artists({ artists }) {
         {
           artists.length > 0
             ? artists.map(artist => (
-              <Artist key={artist._id} artist={artist} />
+              <ArtistCard key={artist._id} artist={artist} />
             ))
             : 'Fetching artists...'
         }

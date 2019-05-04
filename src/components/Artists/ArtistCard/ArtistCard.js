@@ -1,12 +1,12 @@
 import React from 'react';
-import './Artist.scss';
+import './ArtistCard.scss';
 
-function Artist({ artist }) {
+function ArtistCard({ artist }) {
   return (
-    <div className="Artist card">
+    <div className="ArtistCard card">
       <div className="card-image">
         <figure className="image is-square">
-          <img src={artist.image} alt="Artist's avatar" />
+          <img src={artist.image} alt="ArtistCard's avatar" />
         </figure>
       </div>
       <div className="card-content has-text-centered">
@@ -16,4 +16,4 @@ function Artist({ artist }) {
   );
 }
 
-export default Artist;
+export default ArtistCard;

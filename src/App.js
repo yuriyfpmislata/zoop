@@ -3,7 +3,6 @@ import './App.scss';
 import Header from './components/Header/Header';
 import Home from './views/Home/Home';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Artists from './components/Artists/Artists';
 
 function App() {
   return (
