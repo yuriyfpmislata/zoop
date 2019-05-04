@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.scss';
 import * as artistService from '../../services/artists';
+import Artists from '../../components/Artists/Artists';
 
 function Home() {
   const [artists, setArtists] = useState([]);
@@ -15,16 +16,7 @@ function Home() {
 
   return (
     <section className="Home section">
-      <div className="Artists">
-        <h2 className="Artists__title title is-4">Artists</h2>
-        <ul className="Artists__list">
-          {
-            artists.length > 0
-              ? artists.map(artist => <li key={artist._id}>{artist.name}</li>)
-              : 'Fetching artists...'
-          }
-        </ul>
-      </div>
+      <Artists artists={artists} />
     </section>
   );
 }
