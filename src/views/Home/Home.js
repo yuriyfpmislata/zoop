@@ -16,6 +16,7 @@ function Home() {
 
   return (
     <section className="Home section">
+      <h2 className="title is-4">Artists</h2>
       <Artists artists={artists} />
     </section>
   );
