@@ -8,6 +8,7 @@ async function findAll() {
       artists {
         _id
         name
+        image
       }
     }
   `;
