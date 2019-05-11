@@ -2,6 +2,33 @@ import axios from 'axios';
 
 const API = `${process.env.REACT_APP_ZOOP_API_URL}/graphql`;
 
+async function findById(id) {
+  const query = `
+    {
+      artist(id: "${id}") {
+        _id
+        name
+        image
+        albums {
+          _id
+          name
+          artwork
+        }
+        songs {
+          _id
+          name
+          genres
+          playCount
+        }
+      }
+    }
+  `;
+
+  const { data: { data: { artist } } } = await axios.post(API, { query });
+
+  return artist;
+}
+
 async function findAll() {
   const query = `
     {
@@ -36,5 +63,6 @@ async function findRandom(limit = 5) {
 
 export {
   findAll,
-  findRandom
+  findRandom,
+  findById
 }
