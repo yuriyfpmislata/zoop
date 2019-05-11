@@ -8,7 +8,7 @@ function Player() {
   return (
     song
       ? (
-        <div className="Player has-background-primary has-text-white">
+        <div className="Player has-text-white">
           <div className="Player__artwork">
             <img className="image is-96x96" src={song.album.artwork} alt="Album's artwork" />
           </div>
