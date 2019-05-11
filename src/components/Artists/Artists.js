@@ -11,7 +11,7 @@ function Artists({ artists }) {
             ? artists.map(artist => (
               <ArtistCard key={artist._id} artist={artist} />
             ))
-            : <progress class="progress is-small is-primary" max="100"></progress>
+            : <progress className="progress is-small is-primary" max="100"></progress>
         }
       </div>
     </div>

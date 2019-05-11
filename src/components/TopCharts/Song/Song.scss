@@ -1,0 +1,11 @@
+.Song {
+  align-items: center;
+  padding-right: 2rem;
+  &__header {
+    display: block;
+  }
+}
+
+.Song.media + .Song.media {
+  padding-top: 0;
+}
