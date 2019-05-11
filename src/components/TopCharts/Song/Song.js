@@ -16,7 +16,7 @@ function Song({ song }) {
         <h6 className="is-size-6">{song.artist.name}</h6>
       </div>
       <div className="media-right">
-        {song.playCount}
+        <span className="is-size-4 has-text-primary">▸</span><span className="Song__playCount has-text-primary">{song.playCount}</span>
       </div>
     </div>
   );

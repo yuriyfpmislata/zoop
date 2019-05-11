@@ -27,6 +27,10 @@
   &:hover &__artworkOverlay {
     opacity: 1;
   }
+  &__playCount {
+    
+    vertical-align: text-bottom;
+  }
 }
 
 .Song.media + .Song.media {
