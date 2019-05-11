@@ -1,9 +1,10 @@
 import React from 'react';
 import './ArtistCard.scss';
+import { withRouter } from 'react-router-dom';
 
-function ArtistCard({ artist }) {
+function ArtistCard({ artist, history }) {
   return (
-    <div className="ArtistCard card">
+    <div className="ArtistCard card" onClick={() => history.push(`/artist/${artist._id}`)}>
       <div className="card-image">
         <figure className="image is-square">
           <img src={artist.image} alt="ArtistCard's avatar" />
@@ -16,4 +17,4 @@ function ArtistCard({ artist }) {
   );
 }
 
-export default ArtistCard;
+export default withRouter(ArtistCard);

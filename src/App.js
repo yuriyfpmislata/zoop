@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Player from './components/Player/Player';
 import PlayerContext from './contexts/PlayerContext';
 import * as songsService from './services/songs';
+import Artist from './views/Artist/Artist';
 
 function App() {
   const [playingSongId, setPlayingSongId] = useState('');
@@ -33,6 +34,7 @@ function App() {
           <Link to="/">Home</Link>
           <main className="App__main container">
             <Route path="/" exact component={Home} />
+            <Route path="/artist/:artistId" exact component={Artist} />
           </main>
           <Player />
         </div>
