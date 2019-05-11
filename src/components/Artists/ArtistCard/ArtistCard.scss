@@ -1,5 +1,6 @@
 .ArtistCard {
-  .card-content {
+  cursor: pointer;
+  &__content {
     padding: 1rem;
   }
 }
