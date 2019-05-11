@@ -23,7 +23,7 @@ function Home() {
   }, []);
 
   return (
-    <main className="Home">
+    <div className="Home">
       <section className="section">
         <h2 className="title is-4">Featured Artists</h2>
         <Artists artists={artists} />
@@ -33,7 +33,7 @@ function Home() {
         <h2 className="title is-4">Top Charts</h2>
         <TopCharts songs={topCharts} />
       </section>
-    </main>
+    </div>
   );
 }
 
