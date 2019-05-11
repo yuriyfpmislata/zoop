@@ -41,8 +41,6 @@ async function findTopCharts(limit = 10) {
 
   const { data: { data: { topPlayedSongs } } } = await axios.post(API, { query });
 
-  console.log(topPlayedSongs);
-
   return topPlayedSongs;
 }
 
