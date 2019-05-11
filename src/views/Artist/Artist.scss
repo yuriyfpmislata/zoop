@@ -1,0 +1,24 @@
+.Artist {
+  &__content {
+    display: grid;
+    grid-template-columns: 275px 1fr;
+    column-gap: 5rem;
+  }
+  &__albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 2rem;
+
+    align-self: flex-start;
+  }
+  &__albumName {
+    padding: 1rem;
+  }
+  &__song {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    cursor: pointer;
+  }
+}
