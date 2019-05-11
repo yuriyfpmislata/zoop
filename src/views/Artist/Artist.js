@@ -63,7 +63,7 @@ function Artist({ match: route }) {
               </section>
             </div>
           )
-          : <progress className="progress is-small is-primary" max="100"></progress>
+          : null
       }
     </section>
   )

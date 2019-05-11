@@ -8,7 +8,7 @@ function TopCharts({ songs }) {
       {
         songs.length > 0
           ? songs.map(song => <Song key={song._id} song={song} />)
-          : <progress className="progress is-small is-primary" max="100"></progress>
+          : null
       }
     </div>
   );
