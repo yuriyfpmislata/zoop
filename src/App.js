@@ -15,6 +15,10 @@ function App() {
     setSong(await songsService.findById(id));
   }
 
+  function playSong(id) {
+    setPlayingSongId(id);
+  }
+
   useEffect(() => {
     if (playingSongId) {
       fetchSong(playingSongId);
@@ -22,19 +26,18 @@ function App() {
   }, [playingSongId]);
 
   return (
-    <div className="App">
-      <PlayerContext.Provider value={{ song, setPlayingSongId }}>
-        <Header />
-        <main className="App__main container">
-          <Router>
-            <Link to="/">Home</Link>
-
+    <Router>
+      <PlayerContext.Provider value={{ song, playSong }}>
+        <div className="App">
+          <Header />
+          <Link to="/">Home</Link>
+          <main className="App__main container">
             <Route path="/" exact component={Home} />
-          </Router>
-        </main>
-        <Player />
+          </main>
+          <Player />
+        </div>
       </PlayerContext.Provider>
-    </div>
+    </Router>
   );
 }
 

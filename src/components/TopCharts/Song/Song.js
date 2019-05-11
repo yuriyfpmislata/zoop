@@ -3,12 +3,12 @@ import './Song.scss';
 import PlayerContext from '../../../contexts/PlayerContext';
 
 function Song({ song }) {
-  const { setPlayingSongId } = useContext(PlayerContext);
+  const { playSong } = useContext(PlayerContext);
 
   return (
     <div className="Song media card">
       <div className="media-left">
-        <img className="image is-96x96" src={song.album.artwork} alt="Album's artwork" onClick={() => setPlayingSongId(song._id)} />
+        <img className="image is-96x96" src={song.album.artwork} alt="Album's artwork" onClick={() => playSong(song._id)} />
       </div>
       <div className="media-content">
         <h5 className="is-size-5 has-text-primary">{song.name}</h5>
