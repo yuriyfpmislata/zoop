@@ -11,7 +11,7 @@ function ArtistCard({ artist, history }) {
         </figure>
       </div>
       <div className="ArtistCard__content card-content has-text-centered">
-        <h3 className="title is-6">{artist.name}</h3>
+        <h3 className="title is-6 has-text-primary">{artist.name}</h3>
       </div>
     </div>
   );
