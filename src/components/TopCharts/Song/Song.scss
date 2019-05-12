@@ -31,8 +31,19 @@
     
     vertical-align: text-bottom;
   }
+  &__genres {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0.25rem 0;
+    > * {
+      margin-right: 0.333rem;
+      margin-bottom: 0.333rem;
+    }
+  }
 }
 
 .Song.media + .Song.media {
+  border-top: none;
   padding-top: 0;
 }

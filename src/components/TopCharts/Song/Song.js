@@ -14,6 +14,11 @@ function Song({ song }) {
       <div className="media-content">
         <h5 className="is-size-5 has-text-primary">{song.name}</h5>
         <h6 className="is-size-6">{song.artist.name}</h6>
+        <div className="Song__genres">
+          {
+            song.genres.map(genre => <span className="tag is-primary">{genre}</span>)
+          }
+        </div>
       </div>
       <div className="media-right">
         <span className="is-size-4 has-text-primary">▸</span><span className="Song__playCount has-text-primary">{song.playCount}</span>

@@ -36,6 +36,7 @@ async function findAll() {
         _id
         name
         image
+        genres
       }
     }
   `;
@@ -53,6 +54,7 @@ async function findTopCharts(limit = 10) {
       name
       playCount
       url
+      genres
       artist {
         _id
         name
