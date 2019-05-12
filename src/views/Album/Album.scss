@@ -1,0 +1,24 @@
+.Album {
+  &__content {
+    display: grid;
+    grid-template-columns: 275px 1fr;
+    column-gap: 5rem;
+  }
+  &__song {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    cursor: pointer;
+  }
+  &__songGenres {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 0.65rem;
+    > * {
+      margin-right: 0.333rem;
+      margin-bottom: 0.333rem;
+    }
+  }
+}

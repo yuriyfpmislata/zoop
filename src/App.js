@@ -7,6 +7,7 @@ import Player from './components/Player/Player';
 import PlayerContext from './contexts/PlayerContext';
 import * as songsService from './services/songs';
 import Artist from './views/Artist/Artist';
+import Album from './views/Album/Album';
 
 function App() {
   const [playingSongId, setPlayingSongId] = useState('');
@@ -34,6 +35,7 @@ function App() {
           <main className="App__main container">
             <Route path="/" exact component={Home} />
             <Route path="/artist/:artistId" exact component={Artist} />
+            <Route path="/artist/:artistId/album/:albumId" exact component={Album} />
           </main>
           <Player />
         </div>
