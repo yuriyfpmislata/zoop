@@ -21,7 +21,20 @@
 
     cursor: pointer;
   }
+  &__songGenres {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 0.65rem;
+    > * {
+      margin-right: 0.333rem;
+      margin-bottom: 0.333rem;
+    }
+  }
   &__image {
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  }
+  &__album {
+    cursor: pointer;
   }
 }
