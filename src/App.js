@@ -37,6 +37,11 @@ function App() {
             <Route path="/artist/:artistId" exact component={Artist} />
             <Route path="/artist/:artistId/album/:albumId" exact component={Album} />
           </main>
+          <footer className="footer">
+            <div className="has-text-centered">
+              Music from <a href="https://freemusicarchive.org/">Free Music Archive</a>
+            </div>
+          </footer>
           <Player />
         </div>
       </PlayerContext.Provider>
